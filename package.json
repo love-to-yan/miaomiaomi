@@ -1,0 +1,35 @@
+{
+  "name": "miaomiaomi",
+  "version": "1.0.0",
+  "description": "虎儿的喵喵咪网站",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/love-to-yan/miaomiaomi.git"
+  },
+    "keywords": [
+      "express",
+      "web",
+      "restful",
+      "router",
+      "app",
+      "api"
+  ],
+  "author": "calvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/love-to-yan/miaomiaomi/issues"
+  },
+  "homepage": "https://github.com/love-to-yan/miaomiaomi#readme"
+}
