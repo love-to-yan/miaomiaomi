@@ -18,13 +18,13 @@
     "type": "git",
     "url": "git+https://github.com/love-to-yan/miaomiaomi.git"
   },
-    "keywords": [
-      "express",
-      "web",
-      "restful",
-      "router",
-      "app",
-      "api"
+  "keywords": [
+    "express",
+    "web",
+    "restful",
+    "router",
+    "app",
+    "api"
   ],
   "author": "calvin",
   "license": "ISC",

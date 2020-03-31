@@ -49,10 +49,11 @@ app.use(favicon(__dirname+"/public/images/favicon.ico"));
 //app.use(express.static(__dirname+"/public"));//__dirname指向当前文件根目录
 //app.use(express.static(__dirname+"/public/html"));
 
-app.set("port",8888);//设置端口
-app.listen(8888,()=>{
+app.set("port",9100);//设置端口
+app.listen(9100,()=>{
     console.log("服务器已启动"+app.get("port"));
 });
-app.get('/*',(req, res, next)=>{
+app.get('/*.do',(req, res, next)=>{
+    console.log("被访问了")
     res.send("hi 虎儿")
 })
