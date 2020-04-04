@@ -55,6 +55,9 @@ app.all("*",function(req,res,next){
   else
     next();
 })
+app.post('*.do',(rep,res,next)=>{
+  console.log('接受到post请求 app')
+})
 //使用路由
 app.use(route)
 // 1.设置静态资源路径
