@@ -3,11 +3,11 @@ const mysql=require("mysql");
 const dbpool={
   pool:{},
   config:{
-    host:"127.0.0.1",//主机地址
+    host:"47.101.131.32",//主机地址
     port:"3306",//端口号
-    user:"root",
-    password:"root",
-    database:"car"
+    user:"calvin",
+    password:"175747",
+    database:"miaomiaomi"
   },
   create(){
     this.pool=mysql.createPool(this.config);
@@ -24,24 +24,14 @@ const dbpool={
     })
   }
 };
-dbpool.create()
 
 function mysql_init (config) {
   console.log(config)
- // dbpool.config = config
- // dbpool.create()
-  let sql = 'select * from adcar'
-  dbpool.connect(sql,[],(err,data)=>{
-    if (err){
-      console.log('555')
-    }else {
-      console.log('666')
-    }
-  })
+ //dbpool.config = config
+ dbpool.create()
+
   console.log('mysql服务开启')
 }
+dbpool.create()
 
-module.exports = {
-  'dbpool':dbpool,
-  'mysql_init':mysql_init
-}
+module.exports = dbpool

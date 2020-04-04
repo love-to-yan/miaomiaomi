@@ -10,6 +10,5 @@ router.post('*.do',(req,res)=>{
   console.log(req.body)
   let method = req.body.method
    cat[method](req,res)
-  res.send('收到了')
 })
 module.exports = router

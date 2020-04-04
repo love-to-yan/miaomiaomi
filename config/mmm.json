@@ -4,10 +4,10 @@
     "name": "miaomiaomi"
   },
   "mysql": {
-    "host":"127.0.0.1",
+    "host":"47.101.131.32",
     "port":"3306",
-    "user":"root",
-    "password":"root",
+    "user":"calvin",
+    "password":"175747",
     "database":"miaomiaomi"
   }
 }

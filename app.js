@@ -2,7 +2,7 @@
 const express = require('express')//加载express
 const fs = require('fs')//加载fs
 const path = require('path')//加载path
-const mysql_init = require('./dao/dbmysql').mysql_init
+// const mysql_init = require('./dao/dbmysql').mysql_init
 //日志
 const logger = require('morgan')
 //小图标
@@ -75,7 +75,7 @@ function server_init () {
   })
 }
 
-server_init()
+// server_init()
 app.set('port', 9100)//设置端口
 app.listen(9100, () => {
   console.log('服务器已启动' + app.get('port'))
