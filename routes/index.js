@@ -4,6 +4,7 @@ const multiparty=require("connect-multiparty");//文件上传插件
 const connectmultiparty=multiparty();
 router.get('*.do',(req,res)=>{
   console.log('接收到get请求')
+  res.send('err')
 })
 router.post('*.do',(req,res)=>{
   console.log('接收到post请求')
