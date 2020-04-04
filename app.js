@@ -57,6 +57,7 @@ app.all("*",function(req,res,next){
 })
 app.post('*.do',(rep,res,next)=>{
   console.log('接受到post请求 app')
+  next()
 })
 //使用路由
 app.use(route)
