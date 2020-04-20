@@ -10,7 +10,12 @@ router.get('*.do',(req,res)=>{
 router.post('*.do',(req,res)=>{
   console.log('接收到post请求')
   console.log(req.body)
-  let method = req.body.method
-   cat[method](req,res)
+  try{
+    let method = req.body.method
+    cat[method](req,res)
+  }catch (e) {
+    console.log("没有method")
+  }
+
 })
 module.exports = router
