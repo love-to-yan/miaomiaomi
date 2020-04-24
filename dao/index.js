@@ -87,7 +87,7 @@ const dao = {
           reject(err)
           return false
         } else {
-          resolve(result)
+          resolve({state:'ok',result})
         }
 
       })
@@ -113,7 +113,7 @@ const dao = {
         sql = sql.substr(0, sql.length - 1)
         sql += ' FROM '
       } else {
-        sql += '* FROM '
+        sql += ' * FROM '
       }
       if (param.table !== undefined) {
         sql += param.table
@@ -138,7 +138,7 @@ const dao = {
           reject(err)
           return false
         } else {
-          resolve({state:'ok',data:result})
+          resolve({state:'ok',result})
         }
       })
     })
@@ -187,7 +187,7 @@ const dao = {
         if (err) {
           reject(err)
         } else {
-          resolve(result)
+          resolve({state:'ok',result})
         }
       })
     })
@@ -211,7 +211,7 @@ const dao = {
         if (err) {
           reject(err)
         } else {
-          resolve(result)
+          resolve({state:'ok',result})
         }
       })
     })

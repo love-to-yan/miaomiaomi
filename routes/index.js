@@ -7,8 +7,8 @@ router.get('*.do', (req, res) => {
   console.log('接收到get请求')
   res.send('err')
 })
-router.post('*.do', (req, res) => {
-  console.log('接收到post请求')
+router.post('/guest', (req, res) => {
+  console.log('接收到post请求 guest')
   console.log(req.body)
   let method = req.body.method
   if (method !== undefined && cat[method] !== undefined) {
@@ -16,7 +16,8 @@ router.post('*.do', (req, res) => {
   } else {
     res.send(JSON.stringify({
       state: 'err',
-      msg: 'method错误或无method'
+      msg: 'method错误或无method',
+      result:{}
     }))
   }
 })

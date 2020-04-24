@@ -51,13 +51,17 @@ app.all("*",function(req,res,next){
   //跨域允许的请求方式
   res.header("Access-Control-Allow-Methods","DELETE,PUT,POST,GET,OPTIONS")
   res.header('Content-Type', 'application/json;charset=utf-8');
-  if (req.method.toLowerCase() == 'options')
+  if (req.method.toLowerCase() === 'options')
     res.send(200);  //让options尝试请求快速结束
   else
     next();
 })
-app.post('*.do',(rep,res,next)=>{
-  console.log('接受到post请求 app')
+app.post('/guest',(rep,res,next)=>{
+  console.log('接受到post请求 guest')
+  next()
+})
+app.post('/user',(rep,res,next)=>{
+  console.log('接受到post请求 user')
   next()
 })
 //使用路由
