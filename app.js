@@ -67,18 +67,7 @@ app.use(route)
 //app.use(express.static(__dirname+"/public"));//__dirname指向当前文件根目录
 //app.use(express.static(__dirname+"/public/html"));
 
-function server_init () {
-  let file = path.join(__dirname, 'config/mmm.json')
-  fs.readFile(file, 'utf-8', (err, data) => {
-    if (err) {
-      console.log('err')
-    } else {
-      let config = JSON.parse(data)
-      console.log(config)
-      mysql_init(config.mysql)
-    }
-  })
-}
+
 
 // server_init()
 app.set('port', 9100)//设置端口

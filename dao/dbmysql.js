@@ -36,5 +36,4 @@ function mysql_init(){
 }
 
 dbpool.create()
-mysql_init()
 module.exports = dbpool
