@@ -2,7 +2,7 @@ const dao = require('../dao')
 const cat = {
   /*
   * 增加票数*/
-  async add_votes (req, res) {
+  async add_vote (req, res) {
     let data = JSON.parse(req.body.data)
     let id = data['cat_id']
     let sql = `update cat set votes=votes+1 where cat_id=${id};`
@@ -28,10 +28,16 @@ const cat = {
     let data = req.body.data
     let { page, pageSize } = JSON.parse(data)
     try {
-      let result = await dao.sql(`select cat.cat_id,cat.name,cat.age,cat.votes,cat.type,CONCAT(images.realm_name,images.list,cat.head_img)as addr from cat inner join images where cat.images_id =images.images_id limit ${(page - 1) * 10},${pageSize};`
+      let result = await dao.sql(`select cat.cat_id,cat.name,cat.age,cat.votes,cat.type,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id =images.images_id limit ${(page - 1) * 10},${pageSize};`
       )
-      res.send(JSON.stringify(result))
-
+      let result2 = await dao.sql('select count(*) as total from cat;')
+      res.send(JSON.stringify({
+        state:"ok",
+        result:{
+          total:result2.result[0].total,
+          data:result.result
+        }
+      }))
     } catch (e) {
       console.log(e)
       res.send(JSON.stringify({
