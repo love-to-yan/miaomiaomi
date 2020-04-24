@@ -63,6 +63,26 @@ const cat = {
         result: {}
       }))
     }
+  },
+  /*
+  * 获取喵咪照片
+  * */
+  async get_cat_photo(req,res){
+    let data = JSON.parse(req.body.data)
+    let id = data['cat_id']
+    try{
+      let result=await  dao.sql('select CONCAT(images.realm_name,images.list,cat_img.file_name)as addr '
+      +'from images inner join cat_img where cat_img.images_id=images.images_id AND '
+      +`cat_img.cat_id=${id} `)
+      console.log(result)
+      res.send(JSON.stringify(result))
+    }catch (e) {
+      console.log(e)
+      res.send(JSON.stringify({
+        state: 'err',
+        result: {}
+      }))
+    }
   }
 }
 module.exports = cat
