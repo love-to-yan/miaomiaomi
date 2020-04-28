@@ -1,6 +1,7 @@
 const dao = require('../dao')
 const email = require('../config/email')
 const Code = require('./codeController')
+const jwt = require('jsonwebtoken')
 const cat = {
   //增加票数
   async add_vote (req, res) {
@@ -146,9 +147,10 @@ const cat = {
       })
       console.log(result)
       if(result.result.length === 1){
+        let token = jwt.sign({user_email},'miaomiaomi',{expiresIn:'48h'})
         res.send(JSON.stringify({
           status:200,
-          msg:'登录成功'
+          token
         }))
       }else {
         res.send(JSON.stringify({
