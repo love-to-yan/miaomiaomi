@@ -2,7 +2,8 @@
 const express = require('express')//加载express
 const fs = require('fs')//加载fs
 const path = require('path')//加载path
-// const mysql_init = require('./dao/dbmysql').mysql_init
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
 //日志
 const logger = require('morgan')
 //小图标
@@ -43,35 +44,22 @@ app.use(favicon(__dirname+"/public/images/favicon.ico"));
 
  */
 
-app.all("*",function(req,res,next){
+app.all('*', function (req, res, next) {
   //设置允许跨域的域名，*代表允许任意域名跨域
-  res.header("Access-Control-Allow-Origin","*");
+  res.header('Access-Control-Allow-Origin', '*')
   //允许的header类型
-  res.header("Access-Control-Allow-Headers","content-type");
+  res.header('Access-Control-Allow-Headers', 'content-type,X-Requested-With,token')
   //跨域允许的请求方式
-  res.header("Access-Control-Allow-Methods","DELETE,PUT,POST,GET,OPTIONS")
-  res.header('Content-Type', 'application/json;charset=utf-8');
+  res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET,OPTIONS')
+  res.header('Content-Type', 'application/json;charset=utf-8')
   if (req.method.toLowerCase() === 'options')
-    res.send(200);  //让options尝试请求快速结束
+    res.send(200)  //让options尝试请求快速结束
   else
-    next();
+    next()
 })
-app.post('/guest',(rep,res,next)=>{
-  console.log('接受到post请求 guest')
-  next()
-})
-app.post('/user',(rep,res,next)=>{
-  console.log('接受到post请求 user')
-  next()
-})
+
 //使用路由
 app.use(route)
-// 1.设置静态资源路径
-//app.use(express.static(__dirname));
-//app.use(express.static(__dirname+"/public"));//__dirname指向当前文件根目录
-//app.use(express.static(__dirname+"/public/html"));
-
-
 
 // server_init()
 app.set('port', 9100)//设置端口

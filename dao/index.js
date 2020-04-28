@@ -24,6 +24,7 @@ const dao = {
   insert (param) {
     return new Promise((resolve, reject) => {
       let sql = 'INSERT INTO '
+      let values=[]
       if (param.table !== undefined) {
         sql += param.table
       } else {
@@ -67,9 +68,9 @@ const dao = {
           })
           return false
         } else {
-          sql += ' ('
           for (let i = 0; i < param.value.length; i++) {
-            sql = sql + param.value[i] + ','
+            sql +='?,'
+            values[i]=param.value[i]
           }
           sql = sql.substr(0, sql.length - 1)
           sql += ');'
@@ -82,7 +83,8 @@ const dao = {
         })
         return false
       }
-      con.connect(sql, (err, result) => {
+      console.log(sql)
+      con.connect(sql, values,(err, result) => {
         if (err) {
           reject(err)
           return false
