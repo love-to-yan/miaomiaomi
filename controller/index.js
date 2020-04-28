@@ -10,13 +10,13 @@ const cat = {
     try {
       console.log(await dao.sql(sql))
       res.send(JSON.stringify({
-        state: 'ok',
+        status: 200,
         result: {}
       }))
     } catch (e) {
       console.log(e)
       res.send(JSON.stringify({
-        state: 'err',
+        status: '402',
         msg: '操作失败，请检查cat_id的正确性',
         result: {}
       }))
@@ -31,7 +31,7 @@ const cat = {
       )
       let result2 = await dao.sql('select count(*) as total from cat;')
       res.send(JSON.stringify({
-        state: 'ok',
+        status: 200,
         result: {
           total: result2.result[0].total,
           data: result.result
@@ -40,8 +40,9 @@ const cat = {
     } catch (e) {
       console.log(e)
       res.send(JSON.stringify({
-        state: 'err',
-        result: {}
+        status: 505,
+        result: {},
+        msg:'后台错误'
       }))
     }
   },
