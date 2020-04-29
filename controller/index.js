@@ -28,7 +28,7 @@ const cat = {
     let data = req.body.data
     let { page, pageSize } = JSON.parse(data)
     try {
-      let result = await dao.sql(`select cat.cat_id,cat.name,cat.age,cat.votes,cat.type,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id =images.images_id limit ${(page - 1) * 10},${pageSize};`
+      let result = await dao.sql(`select cat.cat_id,cat.name,cat.age,cat.votes,cat.type,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id =images.images_id limit ${(page - 1) * pageSize},${pageSize};`
       )
       let result2 = await dao.sql('select count(*) as total from cat;')
       res.send(JSON.stringify({
@@ -106,11 +106,10 @@ const cat = {
         code
       })) {
         console.log('验证通过，继续操作注册账号')
-
         let result = await dao.insert({
           table: 'user',
-          field: ['email', 'password'],
-          value: [user_email, password]
+          field: ['email', 'password','name'],
+          value: [user_email, password,user_email]
         })
         if (result.state === 'ok') {
           res.send(JSON.stringify({

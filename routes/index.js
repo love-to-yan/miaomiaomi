@@ -34,8 +34,8 @@ router.post('/user',(req,res,next)=>{
     jwt.verify(token,'miaomiaomi',(err,data)=>{
       if(err){
         res.send(JSON.stringify({
-          status:500,
-          msg:'重新登录'
+          status:402,
+          msg:'token错误或过期'
         }))
       }else {
         next()              
