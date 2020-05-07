@@ -9,6 +9,11 @@ router.get('*', (req, res) => {
 </script>`
   )
 })
+router.post('/test',(req, res,next)=>{
+  console.log('test')
+  console.log(req.header)
+  console.log(req.file)
+})
 router.post('/guest/*', (req, res,next) => {
   console.log(req.url)
   let method = req.url.substring(7)
