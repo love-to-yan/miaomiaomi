@@ -3,7 +3,7 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
-const cat = {
+const Guest = {
   //增加票数
   async add_vote (req, res) {
     let data = req.body
@@ -199,21 +199,6 @@ const cat = {
         msg:'用户名密码出错'
       }))
     }
-  },
-  /**
-   * 上传用户猫咪信息
-   */
-
-  async upload_cat(req,res){
-    console.log("upload_cat")
-    console.log(req.body)
-    res.status(200).send("ok")
-  },
-  /**
-   * 修改信息
-   */
-  async update(req,res){
-
   }
 }
-module.exports = cat
+module.exports = Guest

@@ -1,4 +1,5 @@
-const cat = require('../controller')
+const Guest = require('../controller/guest')
+const User = require('../controller/user')
 const router = require('express').Router()
 const multiparty = require('connect-multiparty')()//文件上传插件
 const jwt = require('jsonwebtoken')
@@ -19,8 +20,8 @@ router.post('/guest/*', (req, res,next) => {
   let method = req.url.substring(7)
   console.log(method)
   console.log(req.body)
-  if (cat[method]) {
-    cat[method](req, res)
+  if (Guest[method]) {
+    Guest[method](req, res)
   } else {
     next()
   }
@@ -50,8 +51,8 @@ router.post('/user/*',(req,res)=>{
   console.log("user请求")
   let method = req.url.substring(6)
   console.log("user请求",method)
-  if(cat[method]){
-    cat[method](req,res)
+  if(User[method]){
+    User[method](req,res)
   }else {
     res.send(JSON.stringify({
       'statue': 404,
