@@ -74,7 +74,7 @@ const Guest = {
         img_url[i]=images.result[i]["img_url"]
       }
       res.send(JSON.stringify({
-        state: 'ok',
+        status: 200,
         result: { cat_id, name, votes, age, type, sex ,breed_info,temperament_info,
           living_habits,shape,head_img,img_url}
       }))
