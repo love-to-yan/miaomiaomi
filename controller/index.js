@@ -62,12 +62,25 @@ const cat = {
         table: 'cat',
         where: `cat_id=${id}`
       })
-      let { cat_id, name, votes, age, type, sex } = result.result[0]
+      let { cat_id, name, votes, age, type, sex ,breed_info,temperament_info,
+        living_habits,shape} = result.result[0]
+      let _head_img = await dao.sql('select CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images'+
+        ` where cat.images_id = images.images_id and cat.cat_id=${id};`)
+      let {head_img} = _head_img.result[0]
+      let images = await dao.sql('select CONCAT(images.realm_name,images.list,cat_img.file_name)as img_url from cat_img inner join images' +
+        ` where cat_img.images_id = images.images_id and cat_img.cat_id=${id};`)
+      let img_url=[]
+      for (let i =0; i<images.result.length;i++){
+        img_url[i]=images.result[i]["img_url"]
+      }
+      console.log(img_url)
       res.send(JSON.stringify({
         state: 'ok',
-        result: { cat_id, name, votes, age, type, sex }
+        result: { cat_id, name, votes, age, type, sex ,breed_info,temperament_info,
+          living_habits,shape,head_img,img_url}
       }))
     } catch (e) {
+      console.log(e)
       tool.add_log({
         file:`controller\\index.js`,
         method:'get_cat_info',
@@ -188,10 +201,20 @@ const cat = {
       }))
     }
   },
+  /**
+   * 上传用户猫咪信息
+   */
+
   async upload_cat(req,res){
     console.log("upload_cat")
-    console.log(req)
+    console.log(req.body)
     res.status(200).send("ok")
+  },
+  /**
+   * 修改信息
+   */
+  async update(req,res){
+
   }
 }
 module.exports = cat

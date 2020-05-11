@@ -36,7 +36,7 @@ const tool = {
   * */
   add_log({file,method,msg}){
     let data = this.get_full_date()
-    let buf = `${buf}\t${file}\t${method}\t${msg}\r\n`
+    let buf = `${data}\t${file}\t${method}\t${msg}\r\n`
     fs.writeFile('../miaomiaomi.log', buf,{flag:'a'}, function (err) {
       if (err) {
         return console.error(err)
