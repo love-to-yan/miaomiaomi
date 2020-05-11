@@ -157,7 +157,7 @@ const cat = {
   },
   //用户登录
   async login (req, res) {
-    let {user_email,password} = JSON.parse(req.body.data)
+    let {user_email,password} = req.body
     try{
       let result = await dao.select({
         table:'user',
@@ -187,6 +187,11 @@ const cat = {
         msg:'用户名密码出错'
       }))
     }
+  },
+  async upload_cat(req,res){
+    console.log("upload_cat")
+    console.log(req)
+    res.status(200).send("ok")
   }
 }
 module.exports = cat

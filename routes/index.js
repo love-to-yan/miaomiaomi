@@ -25,29 +25,31 @@ router.post('/guest/*', (req, res,next) => {
     next()
   }
 })
-router.post('/user/*', (req, res, next) => {
-  let token = req.headers.token
-  if (token === undefined) {
-    res.send(JSON.stringify({
-      status: 401,
-      msg: '没有token'
-    }))
-  } else {
-    jwt.verify(token, 'miaomiaomi', (err, data) => {
-      if (err) {
-        res.send(JSON.stringify({
-          status: 402,
-          msg: 'token错误或过期'
-        }))
-      } else {
-        next()
-      }
-    })
-  }
-
-})
+// router.post('/user/*', (req, res, next) => {
+//   let token = req.headers.token
+//   if (token === undefined) {
+//     res.send(JSON.stringify({
+//       status: 401,
+//       msg: '没有token'
+//     }))
+//   } else {
+//     jwt.verify(token, 'miaomiaomi', (err, data) => {
+//       if (err) {
+//         res.send(JSON.stringify({
+//           status: 402,
+//           msg: 'token错误或过期'
+//         }))
+//       } else {
+//         next()
+//       }
+//     })
+//   }
+//
+// })
 router.post('/user/*',(req,res)=>{
+  console.log("user请求")
   let method = req.url.substring(6)
+  console.log("user请求",method)
   if(cat[method]){
     cat[method](req,res)
   }else {
