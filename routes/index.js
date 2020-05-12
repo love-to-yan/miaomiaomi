@@ -16,7 +16,8 @@ router.post('/test',(req, res,next)=>{
   console.log(req.file)
 })
 router.post('/guest/*', (req, res,next) => {
-  console.log(req.url)
+  console.log("收到guest请求，请求参数为")
+  console.log(req.body)
   let method = req.url.substring(7)
   console.log(method)
   console.log(req.body)
