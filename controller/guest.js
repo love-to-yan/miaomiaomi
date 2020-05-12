@@ -188,7 +188,7 @@ const Guest = {
         }))
       } else {
         res.send(JSON.stringify({
-          state: '413',
+          status: 408,
           msg: '用户名密码出错'
         }))
       }
@@ -199,7 +199,7 @@ const Guest = {
         msg: JSON.stringify(e)
       })
       res.send(JSON.stringify({
-        state: '413',
+        status: 409,
         msg: '用户名密码出错'
       }))
     }
