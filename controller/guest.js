@@ -72,9 +72,12 @@ const Guest = {
       let images = await dao.sql('select CONCAT(images.realm_name,images.list,cat_img.file_name)as img_url from cat_img inner join images' +
         ` where cat_img.images_id = images.images_id and cat_img.cat_id=${id};`)
       let img_url = []
+      let indexOf = 0
       for (let i = 0; i < images.result.length; i++) {
         img_url[i] = images.result[i]['img_url']
+        if(img_url[i]===head_img) indexOf = i
       }
+      img_url.splice(indexOf,1)
       res.send(JSON.stringify({
         status: 200,
         result: {
