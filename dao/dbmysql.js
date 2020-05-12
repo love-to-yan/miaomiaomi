@@ -2,7 +2,7 @@ const mysql = require('mysql')
 const dbpool = {
   pool: {},
   config: {
-    host: 'localhost',//主机地址
+    host: '47.101.131.32',//主机地址
     port: '3306',//端口号
     user: 'calvin',
     password: '175747',

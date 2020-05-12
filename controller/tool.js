@@ -37,7 +37,7 @@ const tool = {
   add_log({file,method,msg}){
     let data = this.get_full_date()
     let buf = `${data}\t${file}\t${method}\t${msg}\r\n`
-    fs.writeFile('../miaomiaomi.log', buf,{flag:'a'}, function (err) {
+    fs.writeFile('miaomiaomi.log', buf,{flag:'a'}, function (err) {
       if (err) {
         return console.error(err)
       }
@@ -51,7 +51,7 @@ const tool = {
   save_images({type,image}){
     let file_name = this.get_date_time()
     let buf = `${buf}\t${file}\t${method}\t${msg}\r\n`
-    fs.writeFile(`../images/${file_name}.${type}`, image,{flag:'a'}, function (err) {
+    fs.writeFile(`./images/${file_name}.${type}`, image,{flag:'a'}, function (err) {
       if (err) {
         return console.error(err)
       }

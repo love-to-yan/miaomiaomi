@@ -30,10 +30,11 @@ const Email= {
                 to: receivers, // list of receivers
                 // cc:'haha<xxx@xxx.com>', // copy for receivers
                 // bcc:'haha<xxxx@xxxx.com>', // secret copy for receivers
-                subject: '注册邮箱验证', // Subject line
+                subject: '喵喵咪账号注册邮箱验证通知', // Subject line
                 //text: '验证', // plaintext body
                 // reply-to：'1757478118@qq.com',//custom reply address
-                html: `<div>【喵喵咪】尊敬的《喵喵咪》用户，您正在注册喵喵咪网账号，您的邮箱验证码为：${code}，此验证码30内有效。</div>`, // html body
+                html: `<div><p>尊敬的《喵喵咪》用户，您好！</p>
+您正在注册喵喵咪网账号，注册邮箱为:${receivers},您的邮箱验证码为：${code}，此验证码30内有效。</div>`, // html body
 
         }
         this.transporter.sendMail(mailOptions, function (error, info) {
