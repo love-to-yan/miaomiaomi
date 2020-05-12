@@ -14,13 +14,12 @@ router.post('/test',(req, res,next)=>{
   console.log('test')
   console.log(req.header)
   console.log(req.file)
+  next()
 })
 router.post('/guest/*', (req, res,next) => {
   console.log("收到guest请求，请求参数为")
   console.log(req.body)
   let method = req.url.substring(7)
-  console.log(method)
-  console.log(req.body)
   if (Guest[method]) {
     Guest[method](req, res)
   } else {

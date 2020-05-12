@@ -174,13 +174,13 @@ const dao = {
       let sql = 'update'
       let value = []
       if (param.table !== undefined) {
-        sql = sql + ` '${param.table}' set`
+        sql = sql + ` ${param.table} set`
       }
       if (typeof param.field === typeof param.value) {
         let flag = true
         if (typeof param.field === 'string') {
           flag = false
-          sql = sql + ` '${param.field}'=?`
+          sql = sql + ` ${param.field}=?`
           value[0] = param.value
         }
         if (typeof param.field === 'object' && param.field.length === param.value.length) {
@@ -199,11 +199,12 @@ const dao = {
         }
       }
       if (param.where !== undefined) {
-        sql += ` ${param.where};`
+        sql += ` where ${param.where};`
       }
       console.log(sql)
       con.connect(sql, value, (err, result) => {
         if (err) {
+          console.log(err)
           reject(err)
           return false
         } else {

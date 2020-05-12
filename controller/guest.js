@@ -212,7 +212,11 @@ const Guest = {
     try {
       let { user_email, user_password, code } = req.body
       let result = {}
-      if (true) {
+      if (Code.checkCode({
+        type: 'email',
+        user_email,
+        code
+      })){
         result = await dao.update({
           table: 'user',
           field: 'password',
