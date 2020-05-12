@@ -75,9 +75,9 @@ const Guest = {
       let indexOf = 0
       for (let i = 0; i < images.result.length; i++) {
         img_url[i] = images.result[i]['img_url']
-        if(img_url[i]===head_img) indexOf = i
+        if (img_url[i] === head_img) indexOf = i
       }
-      img_url.splice(indexOf,1)
+      img_url.splice(indexOf, 1)
       res.send(JSON.stringify({
         status: 200,
         result: {
@@ -205,6 +205,33 @@ const Guest = {
         status: 409,
         msg: '用户名密码出错'
       }))
+    }
+  },
+  //修改密码
+  async update_password (req, res) {
+    try {
+      let { user_email, user_password, code } = req.body
+      let result = {}
+      if (true) {
+        result = await dao.update({
+          table: 'user',
+          field: 'password',
+          value: user_password,
+          where: `email='${user_email}'`
+        })
+        if (result.status === 200) {
+          res.send(JSON.stringify({
+            status: result.status
+          }))
+        } else {
+          res.send(JSON.stringify({
+            status: 500,
+            msg:'后台更新数据错误'
+          }))
+        }
+      }
+    } catch (e) {
+
     }
   }
 }

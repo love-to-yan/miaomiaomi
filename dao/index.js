@@ -24,7 +24,7 @@ const dao = {
   insert (param) {
     return new Promise((resolve, reject) => {
       let sql = 'INSERT INTO '
-      let values=[]
+      let values = []
       if (param.table !== undefined) {
         sql += param.table
       } else {
@@ -69,8 +69,8 @@ const dao = {
           return false
         } else {
           for (let i = 0; i < param.value.length; i++) {
-            sql +='?,'
-            values[i]=param.value[i]
+            sql += '?,'
+            values[i] = param.value[i]
           }
           sql = sql.substr(0, sql.length - 1)
           sql += ');'
@@ -84,12 +84,12 @@ const dao = {
         return false
       }
       console.log(sql)
-      con.connect(sql, values,(err, result) => {
+      con.connect(sql, values, (err, result) => {
         if (err) {
           reject(err)
           return false
         } else {
-          resolve({state:'ok',result})
+          resolve({ state: 'ok', result })
         }
 
       })
@@ -136,11 +136,12 @@ const dao = {
       sql += ';'
       console.log(sql)
       con.connect(sql, (err, result) => {
+        console.log(result)
         if (err) {
           reject(err)
           return false
         } else {
-          resolve({state:'ok',result})
+          resolve({ state: 'ok', result })
         }
       })
     })
@@ -153,6 +154,21 @@ const dao = {
    * value 数组/string 值
    * where string 条件
    */
+  /**
+   * @description update 更新 修改数据
+   * @param {Object} param
+   * 传入的参数
+   **/
+  /**
+   /**
+   * @example
+   * update({
+   *   table:'user',
+   *   field:'password',
+   *   value:'123456'
+   *   where:'email=1757478118@qq.com'
+   * });
+   **/
   update (param) {
     return new Promise((resolve, reject) => {
       let sql = 'update'
@@ -185,11 +201,13 @@ const dao = {
       if (param.where !== undefined) {
         sql += ` ${param.where};`
       }
+      console.log(sql)
       con.connect(sql, value, (err, result) => {
         if (err) {
           reject(err)
+          return false
         } else {
-          resolve({state:'ok',result})
+          resolve({ status:200, result })
         }
       })
     })
@@ -213,7 +231,7 @@ const dao = {
         if (err) {
           reject(err)
         } else {
-          resolve({state:'ok',result})
+          resolve({ state: 'ok', result })
         }
       })
     })
@@ -227,7 +245,7 @@ const dao = {
         if (err) {
           reject(err)
         } else {
-          resolve({state:'ok',result})
+          resolve({ state: 'ok', result })
         }
       })
     })
