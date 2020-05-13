@@ -1,0 +1,15 @@
+2020-05-14  00:10:37.0104	controller\index.js	get_cat_info	{}
+2020-05-14  00:12:04.0111	controller\index.js	get_cat_info	{}
+2020-05-14  00:12:27.0888	controller\index.js	get_cat_info	{}
+2020-05-14  00:13:17.0717	controller\index.js	get_cat_info	{}
+2020-05-14  00:13:38.0855	controller\index.js	get_cat_info	{}
+2020-05-14  00:14:41.0007	controller\index.js	get_cat_info	{}
+2020-05-14  00:15:03.0767	controller\index.js	get_cat_info	{}
+2020-05-14  00:16:10.0289	controller\index.js	get_cat_info	{}
+2020-05-14  00:17:46.0273	controller\index.js	get_cat_info	{}
+2020-05-14  00:18:04.0461	controller\index.js	get_cat_info	{}
+2020-05-14  00:18:25.0222	controller\index.js	get_cat_info	{}
+2020-05-14  00:24:02.0669	controller\index.js	get_cat_info	{}
+2020-05-14  00:25:34.0054	controller\index.js	get_cat_info	{}
+2020-05-14  00:26:36.0952	controller\index.js	get_cat_info	{}
+2020-05-14  00:30:03.0575	controller\index.js	get_cat_info	{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlMessage":"Unknown column 'n' in 'field list'","sqlState":"42S22","index":0,"sql":"SELECT n, a, m, e FROM user WHERE user_id=1;"}

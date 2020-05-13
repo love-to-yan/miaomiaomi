@@ -19,7 +19,7 @@ const dao = {
   * param obj 参数
   * table string 表名
   * field 数组 列名
-  * value 数组 值
+  * values 数组 值
   * */
   insert (param) {
     return new Promise((resolve, reject) => {
@@ -49,7 +49,7 @@ const dao = {
             sql = sql + param.field[i] + ','
           }
           sql = sql.substr(0, sql.length - 1)
-          sql += ') VALUES ('
+          sql += ' ) VALUES ( '
         }
       } else {
         console.log('没有列名 ，出错 /dao/index.js/insert')
@@ -59,8 +59,8 @@ const dao = {
         })
         return false
       }
-      if (param.value !== undefined) {
-        if (param.value.length === 0) {
+      if (param.values !== undefined) {
+        if (param.values.length === 0) {
           console.log('列值为空 ，出错 /dao/index.js/insert')
           reject({
             err: 0,
@@ -68,9 +68,9 @@ const dao = {
           })
           return false
         } else {
-          for (let i = 0; i < param.value.length; i++) {
+          for (let i = 0; i < param.values.length; i++) {
             sql += '?,'
-            values[i] = param.value[i]
+            values[i] = param.values[i]
           }
           sql = sql.substr(0, sql.length - 1)
           sql += ');'
@@ -89,7 +89,7 @@ const dao = {
           reject(err)
           return false
         } else {
-          resolve({ state: 'ok', result })
+          resolve(result)
         }
 
       })
@@ -108,11 +108,16 @@ const dao = {
     return new Promise((resolve, reject) => {
       let sql = 'SELECT'
       if (param.field !== undefined) {
-        for (let i = 0; i < param.field.length; i++) {
-          sql += ` ${param.field[i]},`
+        if (typeof param.field === 'object' && param.field.length>0 ) {
+          for (let i = 0; i < param.field.length; i++) {
+            sql += ` ${param.field[i]},`
+          }
         }
-        //删除掉多余的','
-        sql = sql.substr(0, sql.length - 1)
+        if (typeof param.field === 'string'){
+          sql += ` ${param.field},`
+        }
+          //删除掉多余的','
+          sql = sql.substr(0, sql.length - 1)
         sql += ' FROM '
       } else {
         sql += ' * FROM '
@@ -141,7 +146,7 @@ const dao = {
           reject(err)
           return false
         } else {
-          resolve({ state: 'ok', result })
+          resolve(result)
         }
       })
     })
@@ -208,7 +213,7 @@ const dao = {
           reject(err)
           return false
         } else {
-          resolve({ status:200, result })
+          resolve(result)
         }
       })
     })
@@ -232,7 +237,7 @@ const dao = {
         if (err) {
           reject(err)
         } else {
-          resolve({ state: 'ok', result })
+          resolve(result)
         }
       })
     })
@@ -246,7 +251,7 @@ const dao = {
         if (err) {
           reject(err)
         } else {
-          resolve({ state: 'ok', result })
+          resolve(result)
         }
       })
     })

@@ -10,10 +10,8 @@ const Guest = {
     let id = data['cat_id']
     let sql = `update cat set votes=votes+1 where cat_id=${id};`
     try {
-      console.log(await dao.sql(sql))
-      res.send(JSON.stringify({
-        status: 200
-      }))
+      await dao.sql(sql)
+
     } catch (e) {
       tool.add_log({
         file: `controller\\index.js`,
@@ -24,7 +22,11 @@ const Guest = {
         status: 410,
         msg: '操作失败，请检查cat_id的正确性'
       }))
+      return false
     }
+    res.send(JSON.stringify({
+      status: 200
+    }))
   },
   //获取指定数量的喵咪票数信息，用于投票页
   async get_cats_votes (req, res) {
@@ -37,8 +39,8 @@ const Guest = {
       res.send(JSON.stringify({
         status: 200,
         result: {
-          total: result2.result[0].total,
-          data: result.result
+          total: result2[0].total,
+          data: result
         }
       }))
     } catch (e) {
@@ -58,31 +60,40 @@ const Guest = {
     let data = req.body
     let id = data['cat_id']
     try {
-      let result = await dao.select({
+      let _cat_info = dao.select({
         table: 'cat',
         where: `cat_id=${id}`
       })
-      let {
-        cat_id, name, votes, age, type, sex, breed_info, temperament_info,
-        living_habits, shape
-      } = result.result[0]
-      let _head_img = await dao.sql('select CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images' +
+
+      let _head_img = dao.sql('select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images' +
         ` where cat.images_id = images.images_id and cat.cat_id=${id};`)
-      let { head_img } = _head_img.result[0]
-      let images = await dao.sql('select CONCAT(images.realm_name,images.list,cat_img.file_name)as img_url from cat_img inner join images' +
+      let _images = dao.sql('select CONCAT(images.realm_name,images.list,cat_img.file_name)as img_url from cat_img inner join images' +
         ` where cat_img.images_id = images.images_id and cat_img.cat_id=${id};`)
+      let { head_img, user_id } = (await _head_img)[0]
+      console.log(head_img, user_id)
+      let _user_name = dao.select({
+        table: 'user',
+        field: 'name as user_name',
+        where: `user_id=${user_id}`
+      })
       let img_url = []
       let indexOf = 0
-      for (let i = 0; i < images.result.length; i++) {
-        img_url[i] = images.result[i]['img_url']
+      let images = await _images
+      for (let i = 0; i < images.length; i++) {
+        img_url[i] = images[i]['img_url']
         if (img_url[i] === head_img) indexOf = i
       }
       img_url.splice(indexOf, 1)
+      let {
+        cat_id, name, votes, age, type, sex, breed_info, temperament_info,
+        living_habits, shape, upload_date
+      } = (await _cat_info)[0]
+      let { user_name } = (await _user_name)[0]
       res.send(JSON.stringify({
         status: 200,
         result: {
           cat_id, name, votes, age, type, sex, breed_info, temperament_info,
-          living_habits, shape, head_img, img_url
+          living_habits, shape, head_img, img_url, upload_date, user_name
         }
       }))
     } catch (e) {
@@ -139,22 +150,15 @@ const Guest = {
         code
       })) {
         console.log('验证通过，继续操作注册账号')
-        let result = await dao.insert({
+        await dao.insert({
           table: 'user',
           field: ['email', 'password', 'name'],
           value: [user_email, password, user_email]
         })
-        if (result.state === 'ok') {
-          res.send(JSON.stringify({
-            status: 200,
-            msg: '注册成功'
-          }))
-        } else {
-          res.send(JSON.stringify({
-            status: 407,
-            msg: '注册失败'
-          }))
-        }
+        res.send(JSON.stringify({
+          status: 200,
+          msg: '注册成功'
+        }))
       } else {
         res.send(JSON.stringify({
           status: 420,
@@ -182,8 +186,7 @@ const Guest = {
         table: 'user',
         where: `email='${user_email}' AND password='${user_password}'`
       })
-      console.log(result)
-      if (result.result.length === 1) {
+      if (result.length === 1) {
         let token = jwt.sign({ user_email }, 'miaomiaomi', { expiresIn: '48h' })
         res.send(JSON.stringify({
           status: 200,
@@ -216,26 +219,28 @@ const Guest = {
         type: 'email',
         user_email,
         code
-      })){
+      })) {
         result = await dao.update({
           table: 'user',
           field: 'password',
           value: user_password,
           where: `email='${user_email}'`
         })
-        if (result.status === 200) {
-          res.send(JSON.stringify({
-            status: result.status
-          }))
-        } else {
-          res.send(JSON.stringify({
-            status: 500,
-            msg:'后台更新数据错误'
-          }))
-        }
+        res.send(JSON.stringify({
+          status: 200
+        }))
+      } else {
+        res.send(JSON.stringify({
+          status: 420,
+          msg: '验证码错误'
+        }))
       }
     } catch (e) {
-
+      console.log(e)
+      res.send(JSON.stringify({
+        status: 500,
+        msg: '后台更新数据错误'
+      }))
     }
   }
 }

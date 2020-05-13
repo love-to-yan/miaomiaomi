@@ -6,7 +6,8 @@ const dbpool = {
     port: '3306',//端口号
     user: 'calvin',
     password: '175747',
-    database: 'miaomiaomi'
+    database: 'miaomiaomi',
+    timezone: "08:00"
   },
   create () {
     this.pool = mysql.createPool(this.config)
