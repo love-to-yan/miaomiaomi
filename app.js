@@ -28,7 +28,7 @@ app.use(logger('dev'))//调用日志模块，（开发）模式
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
-app.use(multer({ dest: './uploads/' }).array('image'))
+
 //app.use(multipart({uploadDir:'./uploads' }))
 //小图标 ：npm install serve-favicon --save
 //app.use(cookieParser());
@@ -60,6 +60,7 @@ app.all('*', function (req, res, next) {
     next()
 })
 app.post('/user/upload_cat',cpUpload,(req,res,next)=>{
+  console.log(req.files)
   next()
 })
 //使用路由
