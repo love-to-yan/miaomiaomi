@@ -3,7 +3,7 @@ const User = require('../controller/user')
 const router = require('express').Router()
 const multer = require('multer')
 const upload = multer({dest:'./public/uploads'})
-const cpUpload = upload.fields([{ name: 'imgs', maxCount: 1 }, { name: 'headIcon', maxCount: 8 }])
+const cpUpload = upload.fields([{ name: 'imgs', maxCount: 5 }, { name: 'headIcon', maxCount: 8 }])
 const jwt = require('jsonwebtoken')
 router.get('*', (req, res) => {
   res.send(`<script>
