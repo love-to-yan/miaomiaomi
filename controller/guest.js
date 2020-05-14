@@ -190,7 +190,8 @@ const Guest = {
         let token = jwt.sign({ user_email }, 'miaomiaomi', { expiresIn: '48h' })
         res.send(JSON.stringify({
           status: 200,
-          token
+          token,
+          data:result[0]
         }))
       } else {
         res.send(JSON.stringify({
