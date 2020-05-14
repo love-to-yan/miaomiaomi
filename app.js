@@ -53,7 +53,7 @@ app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET,OPTIONS')
   res.header('Content-Type', 'application/json;charset=utf-8')
   if (req.method.toLowerCase() === 'options')
-    res.sendStatus(200)  //让options尝试请求快速结束
+    res.sendStatus(200).send('ok')  //让options尝试请求快速结束
   else
     next()
 })
