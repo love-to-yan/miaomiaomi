@@ -11,10 +11,11 @@ const User = {
 
   async upload_cat (req, res) {
     try {
-      console.log("req.body",req.body)
-      console.log('req.files',req.files)
-      console.log('req.file',req.file)
-      console.log('req.path',req.path)
+      console.log("req.body.imgs",req.body.imgs)
+      console.log("req.body.imgs[0]",req.body.imgs[0])
+      console.log("req.body.headIcon",req.body.headIcon[0])
+      console.log("req.body.obj",req.body.obj)
+
       let head_img = '1.jpg'
       let data = JSON.parse(req.body.data)
       data.head_img = head_img
