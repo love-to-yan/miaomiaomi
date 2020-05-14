@@ -10,6 +10,7 @@ const User = {
 
   async upload_cat (req, res) {
     try {
+      console.log(req.body)
       let head_img = '1.jpg'
       let data = JSON.parse(req.body.data)
       data.head_img = head_img
