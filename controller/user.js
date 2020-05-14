@@ -15,6 +15,7 @@ const User = {
       form.parse(req, function(err, fields, files) {
         console.log(fields, files,' fields2')
         if (err) {
+          console.log(err)
         } else {
           res.json({ imgSrc: files.image[0].path })
         }
@@ -23,6 +24,7 @@ const User = {
       console.log("req.body.imgs[0]",req.body.imgs[0])
       console.log("req.body.headIcon",req.body.headIcon[0])
       console.log("req.body.obj",req.body.obj)
+      console.log("req.body",req.body)
 
       let head_img = '1.jpg'
       let data = JSON.parse(req.body.data)

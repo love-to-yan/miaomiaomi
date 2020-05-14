@@ -46,7 +46,7 @@ router.post('/guest/*', (req, res,next) => {
 //   }
 //
 // })
-router.post('/user/*',connectmultiparty,(req,res)=>{
+router.post('/user/*',(req,res)=>{
   console.log("user请求")
   let method = req.url.substring(6)
   console.log("user请求",method)
