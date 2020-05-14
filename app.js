@@ -16,7 +16,6 @@ const bodyParser = require('body-parser')
 
 const route = require('./routes')
 
-
 const app = express()//执行express的全局函数，返回一个express的服务器对象
 //设置访问的模板格式
 
@@ -27,7 +26,7 @@ app.use(logger('dev'))//调用日志模块，（开发）模式
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
-app.use(multer({ dest: './uploads/'}).array('image'));
+app.use(multer({ dest: './uploads/' }).array('image'))
 //app.use(multipart({uploadDir:'./uploads' }))
 //小图标 ：npm install serve-favicon --save
 //app.use(cookieParser());
@@ -54,7 +53,7 @@ app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET,OPTIONS')
   res.header('Content-Type', 'application/json;charset=utf-8')
   if (req.method.toLowerCase() === 'options')
-    res.send(200)  //让options尝试请求快速结束
+    res.sendStatus(200)  //让options尝试请求快速结束
   else
     next()
 })
