@@ -1,6 +1,6 @@
 //express简单搭建服务器
 const express = require('express')//加载express
-const multer = require('multer')
+
 const upload = multer({ dest: './uploads/' })
 
 //日志
