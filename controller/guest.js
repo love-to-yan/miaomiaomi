@@ -186,12 +186,13 @@ const Guest = {
         table: 'user',
         where: `email='${user_email}' AND password='${user_password}'`
       })
+      let {user_id,name,level} = result[0]
       if (result.length === 1) {
         let token = jwt.sign({ user_email }, 'miaomiaomi', { expiresIn: '48h' })
         res.send(JSON.stringify({
           status: 200,
           token,
-          data:result[0]
+          data: {user_id,name,level}
         }))
       } else {
         res.send(JSON.stringify({
