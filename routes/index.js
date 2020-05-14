@@ -1,7 +1,7 @@
 const Guest = require('../controller/guest')
 const User = require('../controller/user')
 const router = require('express').Router()
-
+const connectmultiparty = require('connect-multiparty')()//文件上传插件
 const jwt = require('jsonwebtoken')
 router.get('*', (req, res) => {
   res.send(`<script>
@@ -46,8 +46,8 @@ router.post('/guest/*', (req, res,next) => {
 //   }
 //
 // })
-router.post('/user/*',(req,res)=>{
-  console.log("收到user请求，请求参数为")
+router.post('/user/*',connectmultiparty,(req,res)=>{
+  console.log("user请求")
   console.log(req.body)
   let method = req.url.substring(6)
   console.log("user请求",method)
