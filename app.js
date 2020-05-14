@@ -1,7 +1,9 @@
 //express简单搭建服务器
 const express = require('express')//加载express
 
-const upload = multer({ dest: './uploads/' })
+const multer = require('multer')
+const upload = multer({dest:'./public/uploads'})
+const cpUpload = upload.fields([{ name: 'imgs', maxCount: 1 }, { name: 'headIcon', maxCount: 8 }])
 
 //日志
 const logger = require('morgan')
@@ -57,7 +59,9 @@ app.all('*', function (req, res, next) {
   else
     next()
 })
-
+app.post('/user/upload_cat',cpUpload,(req,res,next)=>{
+  next()
+})
 //使用路由
 app.use(route)
 
