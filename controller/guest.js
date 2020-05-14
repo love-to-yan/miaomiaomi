@@ -143,7 +143,7 @@ const Guest = {
   //注册用户
   async sign_user (req, res) {
     try {
-      let { user_email, code, password } = req.body
+      let { user_email, user_name,code, password } = req.body
       if (Code.checkCode({
         type: 'email',
         user_email,
@@ -153,7 +153,7 @@ const Guest = {
         await dao.insert({
           table: 'user',
           field: ['email', 'password', 'name'],
-          value: [user_email, password, user_email]
+          value: [user_email, password, user_name]
         })
         res.send(JSON.stringify({
           status: 200,
