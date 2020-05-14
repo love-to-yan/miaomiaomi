@@ -58,6 +58,7 @@ router.post('/user/*',cpUpload,(req,res)=>{
   console.log(req.files)
   console.log("user请求")
   console.log(req.body)
+  console.log(req.body.obj)
   let method = req.url.substring(6)
   console.log("user请求",method)
   if(User[method]){
