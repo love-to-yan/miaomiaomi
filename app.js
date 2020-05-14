@@ -1,10 +1,7 @@
 //express简单搭建服务器
 const express = require('express')//加载express
-const fs = require('fs')//加载fs
-const path = require('path')//加载path
-let multipart = require('connect-multiparty')
 const multer = require('multer')
-//const upload = multer({ dest: 'uploads/' })
+const upload = multer({ dest: './uploads/' })
 
 //日志
 const logger = require('morgan')
