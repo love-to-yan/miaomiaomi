@@ -47,6 +47,7 @@ router.post('/guest/*', (req, res,next) => {
 //
 // })
 router.post('/user/upload_cat',(req,res)=>{
+  console.log('/////////////////////////')
   console.log(req.files)
   console.log(req.body)
   res.send('200')
