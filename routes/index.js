@@ -1,9 +1,8 @@
 const Guest = require('../controller/guest')
 const User = require('../controller/user')
 const router = require('express').Router()
-const multiparty = require('connect-multiparty')()//文件上传插件
+const connectmultiparty = require('connect-multiparty')()//文件上传插件
 const jwt = require('jsonwebtoken')
-const connectmultiparty = multiparty
 router.get('*', (req, res) => {
   res.send(`<script>
   window.location.href="https://www.miaomiaomi.wang"
@@ -47,7 +46,7 @@ router.post('/guest/*', (req, res,next) => {
 //   }
 //
 // })
-router.post('/user/*',(req,res)=>{
+router.post('/user/*',connectmultiparty,(req,res)=>{
   console.log("user请求")
   let method = req.url.substring(6)
   console.log("user请求",method)

@@ -3,6 +3,7 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
+
 const User = {
   /**
    * 上传用户猫咪信息
@@ -10,7 +11,10 @@ const User = {
 
   async upload_cat (req, res) {
     try {
-      console.log(req.body)
+      console.log("req.body",req.body)
+      console.log('req.files',req.files)
+      console.log('req.file',req.file)
+      console.log('req.path',req.path)
       let head_img = '1.jpg'
       let data = JSON.parse(req.body.data)
       data.head_img = head_img
