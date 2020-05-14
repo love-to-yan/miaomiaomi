@@ -1,7 +1,9 @@
 const Guest = require('../controller/guest')
 const User = require('../controller/user')
 const router = require('express').Router()
-
+const multer = require('multer')
+const upload = multer({dest:'./public/uploads'})
+const cpUpload = upload.fields([{ name: 'imgs', maxCount: 1 }, { name: 'headIcon', maxCount: 8 }])
 const jwt = require('jsonwebtoken')
 router.get('*', (req, res) => {
   res.send(`<script>
@@ -46,13 +48,14 @@ router.post('/guest/*', (req, res,next) => {
 //   }
 //
 // })
-router.post('/user/upload_cat',(req,res)=>{
-  console.log('/////////////////////////')
+// router.post('/user/upload_cat',(req,res)=>{
+//   console.log('/////////////////////////')
+//   console.log(req.files)
+//   console.log(req.body)
+//   res.send('200')
+// })
+router.post('/user/*',cpUpload,(req,res)=>{
   console.log(req.files)
-  console.log(req.body)
-  res.send('200')
-})
-router.post('/user/*',(req,res)=>{
   console.log("user请求")
   console.log(req.body)
   let method = req.url.substring(6)

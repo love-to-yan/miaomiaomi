@@ -63,11 +63,7 @@ app.all('*', function (req, res, next) {
   }
 
 })
-app.post('/user/upload_cat',cpUpload,(req,res,next)=>{
-  console.log('-************')
-  console.log(req.files)
-  next()
-})
+
 //使用路由
 app.use(route)
 
