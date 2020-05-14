@@ -30,7 +30,7 @@ app.use(logger('dev'))//调用日志模块，（开发）模式
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
-app.use(multipart({uploadDir:'/upload' }))
+app.use(multipart({uploadDir:'./uploads' }))
 //小图标 ：npm install serve-favicon --save
 //app.use(cookieParser());
 /*app.use(session({

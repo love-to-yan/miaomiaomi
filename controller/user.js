@@ -3,7 +3,7 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
-
+const  multiparty = require('multiparty')
 const User = {
   /**
    * 上传用户猫咪信息
@@ -11,6 +11,14 @@ const User = {
 
   async upload_cat (req, res) {
     try {
+      let form = new multiparty.Form({ uploadDir: './uploads' });
+      form.parse(req, function(err, fields, files) {
+        console.log(fields, files,' fields2')
+        if (err) {
+        } else {
+          res.json({ imgSrc: files.image[0].path })
+        }
+      });
       console.log("req.body.imgs",req.body.imgs)
       console.log("req.body.imgs[0]",req.body.imgs[0])
       console.log("req.body.headIcon",req.body.headIcon[0])
