@@ -57,6 +57,7 @@ app.all('*', function (req, res, next) {
   // if (req.method.toLowerCase() === 'options')
   //   res.send('ok')  //让options尝试请求快速结束
   // else
+  console.log('******')
     next()
 })
 app.post('/user/upload_cat',cpUpload,(req,res,next)=>{
