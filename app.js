@@ -2,8 +2,10 @@
 const express = require('express')//加载express
 const fs = require('fs')//加载fs
 const path = require('path')//加载path
+let multipart = require('connect-multiparty')
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
+
 //日志
 const logger = require('morgan')
 //小图标
@@ -17,6 +19,7 @@ const bodyParser = require('body-parser')
 
 const route = require('./routes')
 
+
 const app = express()//执行express的全局函数，返回一个express的服务器对象
 //设置访问的模板格式
 
@@ -27,7 +30,7 @@ app.use(logger('dev'))//调用日志模块，（开发）模式
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
-
+app.use(multipart({uploadDir:'/upload' }))
 //小图标 ：npm install serve-favicon --save
 //app.use(cookieParser());
 /*app.use(session({
