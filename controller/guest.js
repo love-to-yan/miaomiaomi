@@ -3,6 +3,7 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
+
 const Guest = {
   //增加票数
   async add_vote (req, res) {

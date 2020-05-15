@@ -3,7 +3,13 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
-const  multiparty = require('multiparty')
+const multiparty = require('multiparty')
+const MIME_type = {
+  'image/png': '.png',
+  'image/bmp': '.bmp',
+  'image/gif': '.gif',
+  'image/jpeg': '.jpg'
+}
 const User = {
   /**
    * 上传用户猫咪信息
@@ -11,25 +17,18 @@ const User = {
 
   async upload_cat (req, res) {
     try {
-      let form = new multiparty.Form({ uploadDir: './uploads' });
-      form.parse(req, function(err, fields, files) {
-        console.log(fields, files,' fields2')
-        if (err) {
-          console.log(err)
-        } else {
-          res.json({ imgSrc: files.image[0].path })
-        }
-      });
-      console.log("req.body.imgs",req.body.imgs)
-      console.log("req.body.imgs[0]",req.body.imgs[0])
-      console.log("req.body.headIcon",req.body.headIcon[0])
-      console.log("req.body.obj",req.body.obj)
-      console.log("req.body",req.body)
-
-      let head_img = '1.jpg'
+      //获取上传参数
       let data = JSON.parse(req.body.data)
-      data.head_img = head_img
       let field = [], values = []
+      //喵咪图片保存地址
+      let _path_cat_photo = '/var/www/miaomiaomi-html/image/miao/cat_photo/'
+      //喵咪头像保存地址
+      let _path_head_img = '/var/www/miaomiaomi-html/image/miao/head_img/'
+      let _cat_photo_result = []
+      //文件类型
+      let file_type
+      //文件名
+      let _file_name
       for (let i in data) {
         field.push(i)
         values.push(data[i])
@@ -39,10 +38,64 @@ const User = {
         field,
         values
       })
-      let cat_id = _result.result.insertId
+      //获取新增喵咪记录的cat_id
+      let cat_id = _result.insertId
       console.log(cat_id)
+      //遍历req.files数组，获取图片信息
+      for (let _name in req.files) {
+        for (let i = 0; i < req.files[_name].length; i++) {
+          file_type = MIME_type[req.files[_name][i].mimetype]
+          _file_name = req.files[_name][i].filename + file_type
+          if (_name === 'head_img') {
+            fs.rename(req.files[_name][i].path, _path_head_img + req.files[_name][i].filename + file_type, function (err, doc) {
+              if (err) {
+                console.error(err)
+                tool.add_log({
+                  file: `controller\\user.js`,
+                  method: 'upload_cat',
+                  msg: JSON.stringify(err)
+                })
+              } else {
+                _cat_photo_result.push(dao.insert({
+                  table:'cat_img',
+                  field:['cat_id','images_id','file_name'],
+                  values:[cat_id,1,req.files[_name][i].filename+ file_type]
+                }))
+              }
+            })
+          } else {
+            fs.rename(req.files[_name][i].path, _path_cat_photo + req.files[_name][i].filename + file_type, function (err, doc) {
+              if (err) {
+                console.error(err)
+                tool.add_log({
+                  file: `controller\\user.js`,
+                  method: 'upload_cat',
+                  msg: JSON.stringify(err)
+                })
+              } else {
+                _cat_photo_result.push(dao.insert({
+                  table:'cat_img',
+                  field:['cat_id','images_id','file_name'],
+                  values:[cat_id,2,req.files[_name][i].filename+ file_type]
+                }))
+              }
+            })
+          }
+
+        }
+      }
+
     } catch (e) {
       console.log(e)
+      tool.add_log({
+        file: `controller\\user.js`,
+        method: 'upload_cat',
+        msg: JSON.stringify(err)
+      })
+      res.send(JSON.stringify({
+        status:300,
+      }))
+      return  false
     }
     res.status(200).send('ok')
   },
