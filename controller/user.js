@@ -3,7 +3,6 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
-const multiparty = require('multiparty')
 const  fs = require('fs')
 const MIME_type = {
   'image/png': '.png',

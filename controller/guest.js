@@ -245,6 +245,17 @@ const Guest = {
         msg: '后台更新数据错误'
       }))
     }
+  },
+  //获取投票结果
+  async vote_outcome(req,res){
+    let _total_result = await dao.sql('SELECT sum(votes)as total FROM cat;')
+    let total = parseInt(_total_result[0].total)
+    let result = await dao.sql(`SELECT  name,votes,ROUND(votes/${total}*100)as percentage FROM cat order by percentage DESC;`)
+    res.send(JSON.stringify({
+      status:200,
+      data:result,
+      total
+    }))
   }
 }
 module.exports = Guest
