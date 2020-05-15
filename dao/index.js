@@ -193,8 +193,9 @@ const dao = {
           for (let i = 0; i < param.field.length; i++) {
             sql = sql + ` ${param.field[i]}=?, `
             value[i] = param.value[i]
-            
+
           }
+          sql = sql.substr(0, sql.length - 1)
         }
         if (flag) {
           reject({
