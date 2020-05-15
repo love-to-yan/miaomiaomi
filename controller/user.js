@@ -62,10 +62,10 @@ const User = {
                   field:['cat_id','images_id','file_name'],
                   values:[cat_id,1,req.files[_name][i].filename+ file_type]
                 }))
-                _cat_photo_result.push(dao.insert({
+                _cat_photo_result.push(dao.update({
                   table:'cat',
                   field:['images_id','head_img'],
-                  values:[1,req.files[_name][i].filename+ file_type],
+                  value:[1,req.files[_name][i].filename+ file_type],
                   where:`cat_id=${cat_id}`
                 }))
               }
