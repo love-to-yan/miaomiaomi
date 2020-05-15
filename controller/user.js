@@ -4,6 +4,7 @@ const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
 const multiparty = require('multiparty')
+const  fs = require('fs')
 const MIME_type = {
   'image/png': '.png',
   'image/bmp': '.bmp',
@@ -59,6 +60,11 @@ const User = {
                 _cat_photo_result.push(dao.insert({
                   table:'cat_img',
                   field:['cat_id','images_id','file_name'],
+                  values:[cat_id,1,req.files[_name][i].filename+ file_type]
+                }))
+                _cat_photo_result.push(dao.insert({
+                  table:'cat',
+                  field:['cat_id','images_id','head_img'],
                   values:[cat_id,1,req.files[_name][i].filename+ file_type]
                 }))
               }
