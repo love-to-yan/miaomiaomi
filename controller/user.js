@@ -68,6 +68,7 @@ const User = {
                   value:[1,req.files[_name][i].filename+ file_type],
                   where:`cat_id=${cat_id}`
                 }))
+                _cat_photo_result.push(dao.sql(`update cat set upload_date = now() where cat_id=${cat_id}; `))
               }
             })
           } else {
