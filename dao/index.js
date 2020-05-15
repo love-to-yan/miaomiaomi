@@ -191,9 +191,9 @@ const dao = {
         if (typeof param.field === 'object' && param.field.length === param.value.length) {
           flag = false
           for (let i = 0; i < param.field.length; i++) {
-            sql = sql + ` ${param.field[i]}=?,`
+            sql = sql + ` ${param.field[i]}=?, `
             value[i] = param.value[i]
-            sql = sql.substr(0, sql.length - 1)
+            
           }
         }
         if (flag) {
