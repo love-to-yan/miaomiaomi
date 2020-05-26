@@ -8,6 +8,8 @@ const Guest = {
   //增加票数
   async add_vote (req, res) {
     let ip = req.ip
+    console.log(req.get('X-Real-IP'))
+    console.log(req.get('X-Forwarded-For'))
     console.log(ip)
 
     // console.log(req)
