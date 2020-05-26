@@ -7,6 +7,10 @@ const tool = require('./tool')
 const Guest = {
   //增加票数
   async add_vote (req, res) {
+    let ip = req.ip
+    console.log(ip)
+
+    // console.log(req)
     let data = req.body
     let id = data['cat_id']
     let sql = `update cat set votes=votes+1 where cat_id=${id};`
