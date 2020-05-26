@@ -3,16 +3,18 @@ const email = require('../config/email')
 const Code = require('./codeController')
 const jwt = require('jsonwebtoken')
 const tool = require('./tool')
-
+const ipLimiter = require('./Limiter').ipLimiter
 const Guest = {
   //增加票数
   async add_vote (req, res) {
-    let ip = req.ip
-    console.log(req.get('X-Real-IP'))
-    console.log(req.get('X-Forwarded-For'))
-    console.log(ip)
-
-    // console.log(req)
+    let ip = req.get('X-Real-IP')
+    if(!ipLimiter.ip_limiter(ip)){
+      res.send(JSON.stringify({
+        status: 411,
+        msg: '操作失败，已经投过票了 重复投票无效'
+      }))
+      return true
+    }
     let data = req.body
     let id = data['cat_id']
     let sql = `update cat set votes=votes+1 where cat_id=${id};`
