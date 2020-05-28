@@ -43,7 +43,7 @@ const Guest = {
     let data = req.body
     let { page, pageSize } = data
     try {
-      let result = await dao.sql(`select cat.cat_id,cat.name,cat.age,cat.votes,cat.type,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id =images.images_id ORDER BY votes,cat_id DESC limit ${(page - 1) * pageSize},${pageSize};`
+      let result = await dao.sql(`select cat.cat_id,cat.name,cat.age,cat.votes,cat.type,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id =images.images_id ORDER BY cat.votes DESC limit ${(page - 1) * pageSize},${pageSize};`
       )
       let result2 = await dao.sql('select count(*) as total from cat;')
       res.send(JSON.stringify({
