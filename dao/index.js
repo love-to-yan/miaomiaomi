@@ -19,6 +19,7 @@ const dao = {
   * param obj 参数
   * table string 表名
   * field 数组 列名
+  * order_by string 排序
   * values 数组 值
   * */
   insert (param) {
@@ -134,6 +135,9 @@ const dao = {
       }
       if (param.where !== undefined) {
         sql = sql + ' WHERE ' + param.where
+      }
+      if (param.order_by !== undefined) {
+        sql = sql + ' ORDER BY  ' + param.order_by
       }
       if (param.limit !== undefined) {
         sql = sql + ' LIMIT ' + param.limit
