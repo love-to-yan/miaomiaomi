@@ -163,7 +163,7 @@ const Guest = {
         await dao.insert({
           table: 'user',
           field: ['email', 'password', 'name'],
-          value: [user_email, password, user_name]
+          values: [user_email, password, user_name]
         })
         res.send(JSON.stringify({
           status: 200,
