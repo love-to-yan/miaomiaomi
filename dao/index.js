@@ -147,7 +147,9 @@ const dao = {
       con.connect(sql, (err, result) => {
         console.log(result)
         if (err) {
-          reject(err)
+
+		console.log(err)
+		reject(err)
           return false
         } else {
           resolve(result)

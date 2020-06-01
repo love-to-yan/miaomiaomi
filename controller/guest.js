@@ -24,7 +24,7 @@ const Guest = {
 
     } catch (e) {
       tool.add_log({
-        file: `controller\\index.js`,
+        file: `controller\\guest.js`,
         method: 'add_vote',
         msg: JSON.stringify(e)
       })
@@ -55,7 +55,7 @@ const Guest = {
       }))
     } catch (e) {
       tool.add_log({
-        file: `controller\\index.js`,
+        file: `controller\\guest.js`,
         method: 'get_cats_votes',
         msg: JSON.stringify(e)
       })
@@ -109,7 +109,7 @@ const Guest = {
     } catch (e) {
       console.log(e)
       tool.add_log({
-        file: `controller\\index.js`,
+        file: `controller\\guest.js`,
         method: 'get_cat_info',
         msg: JSON.stringify(e)
       })
@@ -131,7 +131,7 @@ const Guest = {
       res.send(JSON.stringify(result))
     } catch (e) {
       tool.add_log({
-        file: `controller\\index.js`,
+        file: `controller\\guest.js`,
         method: 'get_cat_photo',
         msg: JSON.stringify(e)
       })
@@ -177,7 +177,7 @@ const Guest = {
       }
     } catch (e) {
       tool.add_log({
-        file: `controller\\index.js`,
+        file: `controller\\guest.js`,
         method: 'sign_user',
         msg: JSON.stringify(e)
       })
@@ -212,7 +212,7 @@ const Guest = {
       }
     } catch (e) {
       tool.add_log({
-        file: `controller\\index.js`,
+        file: `controller\\guest.js`,
         method: 'login',
         msg: JSON.stringify(e)
       })

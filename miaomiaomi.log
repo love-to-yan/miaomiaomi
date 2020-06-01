@@ -13,3 +13,207 @@
 2020-05-14  00:25:34.0054	controller\index.js	get_cat_info	{}
 2020-05-14  00:26:36.0952	controller\index.js	get_cat_info	{}
 2020-05-14  00:30:03.0575	controller\index.js	get_cat_info	{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlMessage":"Unknown column 'n' in 'field list'","sqlState":"42S22","index":0,"sql":"SELECT n, a, m, e FROM user WHERE user_id=1;"}
+2020-05-14  07:40:07.0663	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  07:41:50.0336	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  07:45:32.0705	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-14  07:46:14.0339	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-14  12:44:34.0613	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  12:45:28.0797	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  12:46:11.0530	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  12:48:08.0472	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  12:51:24.0460	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-14  12:57:32.0810	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  10:18:51.0376	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  11:39:11.0795	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  13:15:47.0430	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  13:15:55.0489	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  13:16:35.0752	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  13:17:35.0288	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  13:18:40.0312	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  20:21:01.0550	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  20:21:31.0525	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  20:22:45.0749	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  20:30:16.0008	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-15  20:35:11.0175	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-18  17:10:53.0182	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-19  09:17:59.0659	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-20  09:06:51.0927	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-20  09:08:53.0694	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:55.0579	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:56.0355	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:56.0845	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:57.0190	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:57.0844	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:58.0620	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:58.0863	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:58.0995	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:59.0187	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:59.0353	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:59.0601	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:08:59.0772	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:00.0232	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:00.0383	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:01.0751	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:02.0001	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:06.0740	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:06.0850	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:07.0014	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:07.0188	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:07.0372	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:07.0534	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:07.0692	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:07.0841	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:08.0001	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:08.0158	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:08.0586	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:08.0802	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:08.0984	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:09.0145	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:09.0318	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:09.0465	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:09.0642	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:09.0814	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:11.0518	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:12.0440	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:12.0980	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:16.0562	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:17.0553	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:17.0684	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:17.0846	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:17.0993	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:18.0155	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:18.0321	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:18.0446	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:18.0605	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:18.0765	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:20.0079	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:21.0041	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:21.0231	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:21.0393	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:21.0538	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:21.0715	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:21.0866	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:53.0176	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:53.0308	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:53.0461	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:53.0614	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:53.0767	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:53.0904	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:54.0059	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:54.0220	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:54.0391	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:54.0522	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:54.0871	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:55.0040	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:55.0236	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:55.0472	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:55.0851	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:56.0073	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:56.0249	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:57.0574	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:57.0747	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:58.0286	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:58.0393	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:58.0835	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:59.0037	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:59.0180	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:09:59.0327	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:01.0453	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:01.0832	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:02.0017	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:02.0715	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:02.0863	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:03.0033	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:04.0186	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:04.0390	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:04.0520	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:04.0705	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:04.0917	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:05.0101	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:05.0896	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:06.0066	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:06.0257	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-20  09:10:07.0466	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-21  09:13:54.0233	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-21  10:51:16.0108	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-22  09:17:36.0357	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-22  22:09:50.0252	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-23  22:00:47.0783	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-25  08:56:00.0356	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-25  11:05:36.0232	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  09:05:40.0044	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  09:16:36.0622	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:20:34.0700	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:21:01.0919	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:25:52.0572	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:26:44.0155	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:27:25.0290	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:27:31.0908	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:27:49.0047	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:29:06.0396	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:31:11.0363	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:31:23.0569	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:31:33.0730	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:31:37.0250	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:31:44.0756	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:34:41.0341	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:38:38.0235	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:55:33.0433	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:55:35.0747	controller\index.js	get_cat_info	{}
+2020-05-26  10:55:36.0649	controller\index.js	get_cat_info	{}
+2020-05-26  10:55:37.0790	controller\index.js	get_cat_info	{}
+2020-05-26  10:56:07.0028	controller\index.js	get_cat_info	{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1","sqlState":"42000","index":0,"sql":"select cat.user_id,CONCAT(images.realm_name,images.list,cat.head_img)as head_img from cat inner join images where cat.images_id = images.images_id and cat.cat_id=;"}
+2020-05-26  10:56:09.0628	controller\index.js	get_cat_info	{}
+2020-05-27  12:45:58.0415	controller\index.js	login	{}
+2020-05-27  13:15:16.0378	controller\index.js	login	{}
+2020-05-27  13:18:09.0395	controller\index.js	login	{}
+2020-05-27  13:18:14.0808	controller\index.js	login	{}
+2020-05-27  13:18:21.0116	controller\index.js	login	{}
+2020-05-27  13:18:26.0530	controller\index.js	login	{}
+2020-05-27  13:18:27.0411	controller\index.js	login	{}
+2020-05-27  13:18:27.0615	controller\index.js	login	{}
+2020-05-27  13:18:27.0677	controller\index.js	login	{}
+2020-05-27  13:18:28.0021	controller\index.js	login	{}
+2020-05-27  13:18:45.0473	controller\index.js	login	{}
+2020-05-27  15:09:22.0759	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-27  15:09:45.0140	controller\index.js	login	{}
+2020-05-30  11:55:45.0865	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  11:55:50.0001	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  11:55:54.0047	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  11:56:23.0435	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  11:58:18.0364	controller\index.js	login	{}
+2020-05-30  11:58:19.0594	controller\index.js	login	{}
+2020-05-30  11:58:27.0550	controller\index.js	login	{}
+2020-05-30  11:58:28.0686	controller\index.js	login	{}
+2020-05-30  11:58:29.0083	controller\index.js	login	{}
+2020-05-30  11:58:30.0201	controller\index.js	login	{}
+2020-05-30  11:58:48.0649	controller\index.js	login	{}
+2020-05-30  11:58:48.0777	controller\index.js	login	{}
+2020-05-30  11:58:48.0963	controller\index.js	login	{}
+2020-05-30  11:58:49.0126	controller\index.js	login	{}
+2020-05-30  11:58:49.0281	controller\index.js	login	{}
+2020-05-30  11:58:49.0464	controller\index.js	login	{}
+2020-05-30  11:58:49.0641	controller\index.js	login	{}
+2020-05-30  11:58:49.0809	controller\index.js	login	{}
+2020-05-30  11:58:49.0982	controller\index.js	login	{}
+2020-05-30  11:58:52.0396	controller\index.js	login	{}
+2020-05-30  11:58:52.0735	controller\index.js	login	{}
+2020-05-30  11:58:52.0968	controller\index.js	login	{}
+2020-05-30  11:58:53.0177	controller\index.js	login	{}
+2020-05-30  11:58:53.0444	controller\index.js	login	{}
+2020-05-30  11:58:53.0634	controller\index.js	login	{}
+2020-05-30  11:58:53.0885	controller\index.js	login	{}
+2020-05-30  11:58:54.0017	controller\index.js	login	{}
+2020-05-30  12:03:17.0885	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:03:19.0549	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:06:08.0812	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:06:21.0385	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:09:27.0243	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:09:28.0661	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:09:28.0853	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:09:29.0038	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:09:29.0221	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  12:10:00.0685	controller\index.js	sign_user	{"err":0,"msg":"没有列值 ，出错 /dao/index.js/insert"}
+2020-05-30  13:07:26.0528	controller\index.js	login	{}
+2020-05-31  08:53:39.0273	controller\index.js	login	{}
+2020-05-31  17:25:31.0529	controller\index.js	login	{}
